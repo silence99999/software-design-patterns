@@ -18,22 +18,26 @@ type Builder struct {
 	ram     string
 }
 
-func (b *Builder) SetCPU(cpu string) *Builder {
+func NewBuilder() *Builder {
+	return &Builder{}
+}
+
+func (b *Builder) SetCPUModel(cpu string) *Builder {
 	b.cpu = cpu
 	return b
 }
 
-func (b *Builder) SetGPU(gpu string) *Builder {
+func (b *Builder) SetGPUModel(gpu string) *Builder {
 	b.gpu = gpu
 	return b
 }
 
-func (b *Builder) SetCoolers(coolers int) *Builder {
+func (b *Builder) SetCoolersAmount(coolers int) *Builder {
 	b.coolers = coolers
 	return b
 }
 
-func (b *Builder) SetRAM(ram string) *Builder {
+func (b *Builder) SetRAMAmount(ram string) *Builder {
 	b.ram = ram
 	return b
 }
@@ -48,18 +52,5 @@ func (b *Builder) Build() *BuildPC {
 }
 
 func (pc *BuildPC) String() string {
-	return fmt.Sprintf("BuildPC { CPU='%s', GPU='%s', Coolers=%d, RAM='%s' }",
-		pc.CPU, pc.GPU, pc.Coolers, pc.RAM)
-}
-
-func main() {
-	b := &Builder{}
-	pc := b.
-		SetCPU("RYZEN 7 7435hs").
-		SetGPU("NVIDIA RTX 4050").
-		SetCoolers(3).
-		SetRAM("24GB DDR6").
-		Build()
-
-	fmt.Println(pc)
+	return fmt.Sprintf("BuildPC { CPU='%s', GPU='%s', Coolers=%d, RAM='%s' }", pc.CPU, pc.GPU, pc.Coolers, pc.RAM)
 }
