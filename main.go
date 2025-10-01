@@ -1,9 +1,9 @@
 package main
 
 import (
-	"software_design_patterns/assignment_3"
+	"software_design_patterns/assignment_4"
 )
 
 func main() {
-	assignment_3.Print()
+	assignment_4.Print()
 }
