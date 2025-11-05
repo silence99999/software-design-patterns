@@ -17,7 +17,7 @@ func NewHomeTheaterFacade() *HomeTheaterFacade {
 }
 
 func (h *HomeTheaterFacade) WatchMovie(movie string) {
-	fmt.Println("Get ready to watch a movie...")
+	fmt.Println("Get ready to watch a movie")
 	h.projector.On()
 	h.sound.turnOnSoundSystem()
 	h.sound.SetVolume(10)
@@ -26,7 +26,7 @@ func (h *HomeTheaterFacade) WatchMovie(movie string) {
 }
 
 func (h *HomeTheaterFacade) EndMovie() {
-	fmt.Println("Shutting movie theater down...")
+	fmt.Println("Shutting movie theater down")
 	h.dvd.turnOffDVD()
 	h.sound.turnOffSoundSystem()
 	h.projector.Off()
